@@ -33,7 +33,7 @@
             background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
             color: #e0f2fe;
             line-height: 1.6;
-            padding-top: 90px;
+            padding-top: 100px;
             overflow-x: hidden;
         }
 
@@ -58,11 +58,12 @@
             100% { opacity: 1; transform: scale(1) translateY(0); filter: brightness(1) blur(0); }
         }
 
+        /* Header & Navbar Responsif */
         header {
             position: fixed;
             top: 0; left: 0; width: 100%;
             z-index: 1000;
-            background: rgba(2, 6, 23, 0.92);
+            background: rgba(2, 6, 23, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-glow);
             box-shadow: 0 4px 35px rgba(14, 165, 233, 0.25);
@@ -70,6 +71,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .brand-logo {
@@ -85,17 +88,18 @@
         .nav-right-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .nav-item {
             color: #94a3b8;
             text-decoration: none;
-            font-size: 0.78rem;
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: 8px 14px;
+            padding: 6px 10px;
             border-radius: 6px;
             border: 1px solid transparent;
             transition: all 0.3s ease;
@@ -108,35 +112,14 @@
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
         }
 
-        .btn-nav {
-          display: inline-block;
-          background: linear-gradient(135deg, #00c6ff, #0072ff); 
-          color: #ffffff;
-          padding: 10px 22px;
-          font-size: 14px;
-          font-weight: 600;
-          text-decoration: none;
-          border-radius: 30px;
-          box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
-          transition: all 0.3s ease;
-          border: none;
-          cursor: pointer;
-        }
-
-        .btn-nav:hover {
-          transform: translateY(-2px); 
-          box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
-          background: linear-gradient(135deg, #00d2ff, #0082ff);
-        }
-        
         .btn-portal-back {
             background: linear-gradient(135deg, #0284c7, #4f46e5);
             color: #ffffff !important;
             border: 1px solid var(--primary-glow);
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 6px;
             font-weight: 800;
-            font-size: 0.78rem;
+            font-size: 0.73rem;
             text-decoration: none;
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
             transition: all 0.3s ease;
@@ -148,14 +131,14 @@
         }
 
         section {
-            padding: 50px 5%;
+            padding: 40px 5%;
             max-width: 1280px;
             margin: 0 auto;
         }
 
         .hero-banner {
             text-align: center;
-            padding: 30px 0;
+            padding: 20px 0 40px 0;
         }
 
         .badge-hologram {
@@ -172,7 +155,7 @@
         }
 
         .hero-banner h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 900;
             color: #ffffff;
             text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
@@ -192,10 +175,12 @@
             margin-bottom: 25px;
             border-bottom: 1px solid rgba(56, 189, 248, 0.15);
             padding-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .section-header h2 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 900;
             color: #ffffff;
             letter-spacing: 1px;
@@ -203,7 +188,7 @@
             text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
         }
 
-        .section-header p { font-size: 0.82rem; color: #64748b; }
+        .section-header p { font-size: 0.8rem; color: #64748b; }
 
         .holo-card {
             background: var(--card-bg);
@@ -226,24 +211,24 @@
         }
 
         .holo-card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-5px) scale(1.01);
             border-color: var(--primary-glow);
             box-shadow: 0 0 35px rgba(56, 189, 248, 0.5), inset 0 0 20px rgba(56, 189, 248, 0.2);
         }
 
         .monitor-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 18px;
         }
 
         .monitor-card { padding: 20px 15px; text-align: center; }
-        .monitor-val { font-size: 1.8rem; font-weight: 900; color: var(--primary-glow); text-shadow: 0 0 12px rgba(56, 189, 248, 0.8); }
-        .monitor-lbl { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; font-weight: 800; margin-top: 4px; }
+        .monitor-val { font-size: 1.6rem; font-weight: 900; color: var(--primary-glow); text-shadow: 0 0 12px rgba(56, 189, 248, 0.8); }
+        .monitor-lbl { font-size: 0.73rem; color: #94a3b8; text-transform: uppercase; font-weight: 800; margin-top: 4px; }
 
         .member-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 22px;
         }
 
@@ -252,10 +237,10 @@
         .member-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .member-card:hover .member-img-box img { transform: scale(1.08); }
         .member-details { padding: 18px; }
-        .member-title-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .member-title-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 5px;}
         .member-name { font-size: 1.15rem; font-weight: 800; color: #ffffff; }
-        .member-badge { font-size: 0.7rem; background: rgba(56, 189, 248, 0.15); color: var(--primary-glow); border: 1px solid rgba(56, 189, 248, 0.4); padding: 3px 10px; border-radius: 12px; font-weight: 700; }
-        .member-role-title { font-size: 0.82rem; color: #38bdf8; font-weight: 700; margin-bottom: 8px; }
+        .member-badge { font-size: 0.68rem; background: rgba(56, 189, 248, 0.15); color: var(--primary-glow); border: 1px solid rgba(56, 189, 248, 0.4); padding: 3px 10px; border-radius: 12px; font-weight: 700; }
+        .member-role-title { font-size: 0.8rem; color: #38bdf8; font-weight: 700; margin-bottom: 8px; }
 
         .skills-tag-list {
             display: flex;
@@ -275,13 +260,13 @@
 
         .grid-layout-8 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
         .service-img-box {
             width: 100%;
-            height: 150px;
+            height: 140px;
             background: #091328;
             position: relative;
             overflow: hidden;
@@ -297,13 +282,14 @@
 
         .holo-card:hover .service-img-box img { transform: scale(1.08); }
 
-        .service-content { padding: 18px; }
-        .service-title { font-size: 1rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
-        .service-text { font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px; }
-        .tag-status { display: inline-block; font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
+        .service-content { padding: 16px; }
+        .service-title { font-size: 0.95rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+        .service-text { font-size: 0.78rem; color: #94a3b8; margin-bottom: 10px; }
+        .tag-status { display: inline-block; font-size: 0.68rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; }
         .tag-active { background: rgba(74, 222, 128, 0.15); color: var(--accent-green); border: 1px solid rgba(74, 222, 128, 0.4); }
         .tag-secure { background: rgba(56, 189, 248, 0.15); color: var(--primary-glow); border: 1px solid rgba(56, 189, 248, 0.4); }
 
+        /* Modal Hologram Popup */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -316,6 +302,7 @@
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
+            padding: 15px;
         }
 
         .modal-overlay.active {
@@ -328,33 +315,25 @@
             border: 2px solid var(--primary-glow);
             box-shadow: 0 0 50px rgba(56, 189, 248, 0.7), inset 0 0 30px rgba(56, 189, 248, 0.2);
             border-radius: 16px;
-            width: 90%;
-            max-width: 620px;
-            padding: 30px;
+            width: 100%;
+            max-width: 580px;
+            padding: 25px;
             position: relative;
             transform: scale(0.7);
             overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .modal-overlay.active .modal-box {
             animation: hologramProject 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
-        .modal-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(56, 189, 248, 0.04) 50%, rgba(0, 0, 0, 0.2) 50%);
-            background-size: 100% 4px;
-            pointer-events: none;
-        }
-
         .modal-header-tag {
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             color: var(--primary-glow);
-            letter-spacing: 2.5px;
+            letter-spacing: 2px;
             font-weight: 900;
-            text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
             margin-bottom: 6px;
         }
 
@@ -362,7 +341,7 @@
             position: absolute;
             top: 15px; right: 20px;
             color: #94a3b8;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             cursor: pointer;
             transition: color 0.2s;
             z-index: 10;
@@ -371,55 +350,58 @@
         .modal-close:hover { color: var(--primary-glow); }
         
         .modal-title { 
-            font-size: 1.5rem; 
+            font-size: 1.3rem; 
             font-weight: 900; 
             color: #ffffff; 
-            margin-bottom: 14px; 
-            text-shadow: 0 0 12px rgba(56, 189, 248, 0.8); 
+            margin-bottom: 12px; 
             border-bottom: 1px solid rgba(56, 189, 248, 0.3);
             padding-bottom: 8px;
         }
 
-        .modal-body { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; white-space: pre-line; }
+        .modal-body { font-size: 0.88rem; color: #cbd5e1; line-height: 1.6; white-space: pre-line; }
         
         .modal-spec-box {
-            margin-top: 18px;
-            padding: 14px;
+            margin-top: 15px;
+            padding: 12px;
             background: rgba(56, 189, 248, 0.1);
             border: 1px solid var(--primary-glow);
             border-radius: 8px;
-            font-size: 0.82rem;
+            font-size: 0.78rem;
             color: #7dd3fc;
             font-family: monospace;
-            box-shadow: inset 0 0 15px rgba(56, 189, 248, 0.2);
         }
 
         footer {
             border-top: 1px solid rgba(56, 189, 248, 0.3);
-            padding: 25px; text-align: center;
-            font-size: 0.8rem; color: #64748b; margin-top: 50px;
+            padding: 25px 15px; 
+            text-align: center;
+            font-size: 0.78rem; 
+            color: #64748b; 
+            margin-top: 40px;
         }
         footer span { color: var(--primary-glow); font-weight: 800; }
+
+        /* Penyesuaian khusus layar Handphone kecil */
+        @media (max-width: 768px) {
+            body { padding-top: 140px; }
+            header { justify-content: center; text-align: center; padding: 12px; }
+            .nav-right-container { justify-content: center; width: 100%; }
+            .hero-banner h1 { font-size: 1.7rem; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-<!-- Header Navbar dengan Link ke Web Utama -->
-    <header>
         <div class="brand-logo">CV <span>KELOMPOK 08</span></div>
         <div class="nav-right-container">
-            <a href="#monitor" class="nav-item active" id="nav-monitor">System Monitor</a>
-            <a href="#anggota" class="nav-item" id="nav-anggota">Profil Anggota</a>
-            <a href="#layanan" class="nav-item" id="nav-layanan">Layanan (8)</a>
-            <a href="#keamanan" class="nav-item" id="nav-keamanan">Keamanan (4)</a>
-            <!-- Link diperbarui ke web utama tanpa target="_blank" -->
-      <a href="https://sitzcave.github.io/cv-klmpk8/">Web CV</a>
-      <a href="https://sitzcave.github.io/kelompok-08-tjkt/">← Kembali ke Web Utama</a>
-</nav>
-            
+            <a href="#monitor" class="nav-item active">Monitor</a>
+            <a href="#anggota" class="nav-item">Profil</a>
+            <a href="#layanan" class="nav-item">Layanan (8)</a>
+            <a href="#keamanan" class="nav-item">Keamanan (4)</a>
+            <a href="https://sitzcave.github.io/cv-klmpk8/" class="btn-portal-back">Web CV</a>
+            <a href="https://sitzcave.github.io/kelompok-08-tjkt/" class="btn-portal-back">← Web Utama</a>
         </div>
-    </header>        </div>
     </header>
 
     <div class="hero-banner">
@@ -428,11 +410,12 @@
         <p>Portal monitoring real-time, spesifikasi server, serta portofolio anggota Kelompok 08 TJKT SMK Bela Nusantara Cianjur.</p>
     </div>
 
-    <!-- 1. SYSTEM MONITOR -->
     <section id="monitor">
         <div class="section-header">
-            <h2>Realtime System Monitor</h2>
-            <p>Klik indikator untuk menampilkan proyeksi hologram full info</p>
+            <div>
+                <h2>Realtime System Monitor</h2>
+                <p>Klik indikator untuk menampilkan proyeksi hologram full info</p>
+            </div>
         </div>
         <div class="monitor-grid">
             <div class="holo-card monitor-card" onclick="openHoloModal('STATUS RILIS WEB', 'Web Version v2.6 STABLE', 'Sistem beroperasi pada versi stabil 2.6 dengan penambalan celah keamanan otomatis, optimasi cache Apache2, dan kompatibilitas SSL/TLS modern.', 'System Integrity: 100% | Uptime: 99.9%')">
@@ -458,16 +441,17 @@
         </div>
     </section>
 
-    <!-- 2. PROFIL ANGGOTA -->
     <section id="anggota">
         <div class="section-header">
-            <h2>Profil Anggota Kelompok 8</h2>
-            <p>Klik profil anggota untuk menampilkan CV Hologram lengkap</p>
+            <div>
+                <h2>Profil Anggota Kelompok 8</h2>
+                <p>Klik profil anggota untuk menampilkan CV Hologram lengkap</p>
+            </div>
         </div>
         <div class="member-grid">
             <div class="holo-card member-card" onclick="openHoloModal('PROYEKSI CV HOLOGRAM', 'Resky — Ketua Kelompok 8', 'Kualifikasi Teknik:\n• Memiliki spesialisasi utama dalam merancang Network Architecture.\n• Manajemen Linux Server (Apache2, DNS BIND9, SSH).\n• Eksekusi routing & switching jaringan enterprise.\n\nTugas Proyek:\nBertanggung jawab memimpin alur proyek, konfigurasi Web Server utama, dan manajemen alokasi tugas anggota.', 'Jabatan: Ketua Tim | Status: System Architect | Skills: Linux, Routing, Security')">
                 <div class="member-img-box">
-                    <img src="WhatsApp Image 2026-08-26 at 09.51.54.jpeg" alt="Resky">
+                    <img src="WhatsApp Image 2026-08-26 at 09.51.54.jpeg" alt="Resky" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
                 </div>
                 <div class="member-details">
                     <div class="member-title-bar">
@@ -485,7 +469,7 @@
 
             <div class="holo-card member-card" onclick="openHoloModal('PROYEKSI CV HOLOGRAM', 'Chelsea — Anggota Tim', 'Kualifikasi Teknik:\n• Berfokus pada pengujian performa UI/UX Web Interface (Web Testing).\n• Validasi dan audit keamanan subdomain.\n• Pengkonfigurasian segmentasi VLAN jaringan.\n\nTugas Proyek:\nMelakukan audit antarmuka web, pengujian respon HTTP, serta memastikan segmentasi jaringan VLAN berjalan tanpa konflik IP.', 'Jabatan: Anggota Tim | Status: Web QA Specialist | Skills: VLAN Trunking, Web Testing')">
                 <div class="member-img-box">
-                    <img src="WhatsApp Image 2026-08-26 at 10.45.05.jpeg" alt="Chelsea">
+                    <img src="WhatsApp Image 2026-08-26 at 10.45.05.jpeg" alt="Chelsea" onerror="this.src='https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80'">
                 </div>
                 <div class="member-details">
                     <div class="member-title-bar">
@@ -503,7 +487,7 @@
 
             <div class="holo-card member-card" onclick="openHoloModal('PROYEKSI CV HOLOGRAM', 'Winda — Anggota Tim', 'Kualifikasi Teknik:\n• Administrasi hak akses berkas sistem (Permissions 755/644).\n• Penyambungan kabel Fiber Optic (Splicing).\n• Pengelolaan transfer berkas via FTP FileZilla.\n\nTugas Proyek:\nMengatur tingkat proteksi direktori web server agar aman dari eksploitasi berkas serta penyambungan fisik media transmisi FO.', 'Jabatan: Anggota Tim | Status: Infrastructure Engineer | Skills: FO Splicing, Permissions')">
                 <div class="member-img-box">
-                    <img src="WhatsApp Image 2026-08-26 at 09.24.29.jpeg" alt="Winda">
+                    <img src="WhatsApp Image 2026-08-26 at 09.24.29.jpeg" alt="Winda" onerror="this.src='https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=600&q=80'">
                 </div>
                 <div class="member-details">
                     <div class="member-title-bar">
@@ -521,11 +505,12 @@
         </div>
     </section>
 
-    <!-- 3. MODUL INFRASTRUKTUR & LAYANAN (8 Info + Foto Online) -->
     <section id="layanan">
         <div class="section-header">
-            <h2>Modul Infrastruktur & Layanan (8 Info)</h2>
-            <p>Klik modul mana saja untuk melihat rincian spesifikasi hologram</p>
+            <div>
+                <h2>Modul Infrastruktur & Layanan (8 Info)</h2>
+                <p>Klik modul mana saja untuk melihat rincian spesifikasi hologram</p>
+            </div>
         </div>
         <div class="grid-layout-8">
             <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 01', 'Apache2 HTTP Web Server', 'Layanan pelayan web utama yang menangani permintaan HTTP/HTTPS pada subdomain cv-klmpk8. Dilengkapi modul mod_rewrite untuk jalur URL bersih.', 'Port: 80 / 443 | Status: Active (Running)')">
@@ -618,11 +603,12 @@
         </div>
     </section>
 
-    <!-- 4. SECURITY & NETWORK ANALYTICS (4 Info + Foto Online) -->
     <section id="keamanan">
         <div class="section-header">
-            <h2>Security & Network Analytics (4 Info)</h2>
-            <p>Klik kartu analitis untuk statistik detail hologram</p>
+            <div>
+                <h2>Security & Network Analytics (4 Info)</h2>
+                <p>Klik kartu analitis untuk statistik detail hologram</p>
+            </div>
         </div>
         <div class="grid-layout-8">
             <div class="holo-card" onclick="openHoloModal('ANALITIS KEAMANAN 01', 'Intrusion Detection System', 'Sistem pencegahan pencurian akses secara otomatis memblokir IP asing yang gagal melakukan login SSH lebih dari 3 kali.', 'Blocked IPs: 2 Active | Action: Auto Drop Packets')">
@@ -654,75 +640,61 @@
                 <div class="service-content">
                     <div class="service-title">Koneksi HTTP / SSL</div>
                     <div class="service-text">Protokol transfer data saat ini menggunakan standard SSL.</div>
-                    <span class="tag-status tag-active">● PENDING SSL</span>
+                    <span class="tag-status tag-active">● SECURE SSL</span>
                 </div>
             </div>
 
-            <div class="holo-card" onclick="openHoloModal('ANALITIS KEAMANAN 04', 'DNS Query Logs', 'Pencatatan statistik permintaan translasi nama domain ke IP address guna mendeteksi aktivitas DNS Poisoning.', 'Total Queries: 1,420 | Resolution Time: <1ms')">
+            <div class="holo-card" onclick="openHoloModal('ANALITIS KEAMANAN 04', 'Traffic Bandwidth Analyzer', 'Analisis arus keluar masuk data web harian untuk mengukur kapasitas bandwidth dan mencegah lonjakan trafik anomali.', 'Total Bandwidth: 120 GB / Bulan | Status: Normal')">
                 <div class="service-img-box">
-                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="DNS Query Logs">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Bandwidth Analyzer">
                 </div>
                 <div class="service-content">
-                    <div class="service-title">DNS Query Logs</div>
-                    <div class="service-text">Log penerjemahan translasi nama domain ke IP server.</div>
-                    <span class="tag-status tag-secure">✓ FAST RESOLVE</span>
+                    <div class="service-title">Bandwidth Analyzer</div>
+                    <div class="service-text">Pemantauan arus bandwidth bulanan server web.</div>
+                    <span class="tag-status tag-secure">✓ 120GB NORMAL</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        &copy; 2026 CV Subdomain Kelompok 8 - TJKT SMK Bela Nusantara Cianjur [<span>SYSTEM ONLINE & MONITORING ACTIVE</span>]
-    </footer>
-
-    <div class="modal-overlay" id="holoModal">
-        <div class="modal-box">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <div class="modal-header-tag" id="mTag">// HOLOGRAM SYSTEM PROJECTION</div>
-            <div class="modal-title" id="mTitle">TITLE HOLOGRAM</div>
-            <div class="modal-body" id="mBody">Content text goes here...</div>
-            <div class="modal-spec-box" id="mSpec">[DATA PARAMETER] Status: OK</div>
+    <div class="modal-overlay" id="holoModalOverlay" onclick="closeHoloModal(event)">
+        <div class="modal-box" id="holoModalBox">
+            <span class="modal-close" onclick="forceCloseModal()">&times;</span>
+            <div class="modal-header-tag" id="modalTag">SYSTEM PROJECTION ACTIVE</div>
+            <div class="modal-title" id="modalTitle">Title</div>
+            <div class="modal-body" id="modalBody">Description text...</div>
+            <div class="modal-spec-box" id="modalSpec">Specs...</div>
         </div>
     </div>
 
+    <footer>
+        <p>&copy; 2026 <span>Kelompok 08 TJKT</span> — SMK Bela Nusantara Cianjur. All Rights Reserved.</p>
+    </footer>
+
     <script>
-        function openHoloModal(tag, title, content, spec) {
-            document.getElementById('mTag').innerText = "// " + tag;
-            document.getElementById('mTitle').innerText = title;
-            document.getElementById('mBody').innerText = content;
-            document.getElementById('mSpec').innerText = "[SYSTEM PARAMETER] " + spec;
-            document.getElementById('holoModal').classList.add('active');
+        function openHoloModal(tag, title, body, spec) {
+            document.getElementById('modalTag').innerText = "PROJECTION: " + tag;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('modalSpec').innerText = "SYSTEM TELEMETRY: " + spec;
+            document.getElementById('holoModalOverlay').classList.add('active');
         }
 
-        function closeModal() {
-            document.getElementById('holoModal').classList.remove('active');
+        function forceCloseModal() {
+            document.getElementById('holoModalOverlay').classList.remove('active');
         }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('holoModal');
-            if (event.target == modal) {
-                closeModal();
+        function closeHoloModal(event) {
+            if (event.target === document.getElementById('holoModalOverlay')) {
+                forceCloseModal();
             }
         }
 
-        const sections = document.querySelectorAll("section");
-        const navItems = document.querySelectorAll(".nav-item");
-
-        window.addEventListener("scroll", () => {
-            let current = "";
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            navItems.forEach((item) => {
-                item.classList.remove("active");
-                if (item.getAttribute("href") === "#" + current) {
-                    item.classList.add("active");
-                }
-            });
+        // Tutup modal dengan tombol Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                forceCloseModal();
+            }
         });
     </script>
 </body>
