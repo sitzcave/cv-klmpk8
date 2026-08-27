@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV KELOMPOK 8 - ULTRA HOLOGRAM COMMAND CENTER</title>
+    <style>
+        :root {
+            --bg-color: #020617;
+            --primary-glow: #38bdf8;
+            --secondary-glow: #818cf8;
+            --accent-green: #4ade80;
+            --border-glow: rgba(56, 189, 248, 0.4);
+            --card-bg: rgba(15, 23, 42, 0.75);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 50% 15%, rgba(14, 165, 233, 0.25), transparent 70%),
+                radial-gradient(circle at 85% 75%, rgba(99, 102, 241, 0.2), transparent 60%),
+                linear-gradient(rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+            color: #e0f2fe;
+            line-height: 1.6;
+            padding-top: 90px;
+            overflow-x: hidden;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+
+        @keyframes scanlineAnim {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(1000%); }
+        }
+
+        @keyframes holoGlowPulse {
+            0%, 100% { box-shadow: 0 0 15px rgba(56, 189, 248, 0.3), inset 0 0 10px rgba(56, 189, 248, 0.1); }
+            50% { box-shadow: 0 0 25px rgba(56, 189, 248, 0.6), inset 0 0 20px rgba(56, 189, 248, 0.25); }
+        }
+
+        @keyframes hologramProject {
+            0% { opacity: 0; transform: scale(0.7) translateY(40px); filter: brightness(2) blur(4px); }
+            50% { opacity: 0.8; filter: brightness(1.3) blur(1px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: brightness(1) blur(0); }
+        }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            background: rgba(2, 6, 23, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-glow);
+            box-shadow: 0 4px 35px rgba(14, 165, 233, 0.25);
+            padding: 14px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            font-size: 1.15rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+        }
+
+        .brand-logo span { color: var(--primary-glow); }
+
+        .nav-right-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-item {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--primary-glow);
+            border-color: rgba(56, 189, 248, 0.6);
+            background: rgba(56, 189, 248, 0.12);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-portal-back {
+            background: linear-gradient(135deg, #0284c7, #4f46e5);
+            color: #ffffff !important;
+            border: 1px solid var(--primary-glow);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 0.78rem;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-portal-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
+        }
+
+        section {
+            padding: 50px 5%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .hero-banner {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .badge-hologram {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--primary-glow);
+            border: 1px solid var(--primary-glow);
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .hero-banner h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+        }
+
+        .hero-banner p {
+            color: #94a3b8;
+            max-width: 650px;
+            margin: 10px auto 0;
+            font-size: 0.95rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+            padding-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        }
+
+        .section-header p { font-size: 0.82rem; color: #64748b; }
+
+        .holo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 14px;
+            backdrop-filter: blur(16px);
+            animation: floatSlow 6s ease-in-out infinite, holoGlowPulse 4s ease-in-out infinite;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .holo-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-glow), transparent);
+            animation: scanlineAnim 8s linear infinite;
+        }
+
+        .holo-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.5), inset 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .monitor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 18px;
+        }
+
+        .monitor-card { padding: 20px 15px; text-align: center; }
+        .monitor-val { font-size: 1.8rem; font-weight: 900; color: var(--primary-glow); text-shadow: 0 0 12px rgba(56, 189, 248, 0.8); }
+        .monitor-lbl { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; font-weight: 800; margin-top: 4px; }
+
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .member-card { display: flex; flex-direction: column; }
+        .member-img-box { width: 100%; height: 240px; overflow: hidden; position: relative; }
+        .member-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .member-card:hover .member-img-box img { transform: scale(1.08); }
+        .member-details { padding: 18px; }
+        .member-title-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .member-name { font-size: 1.15rem; font-weight: 800; color: #ffffff; }
+        .member-badge { font-size: 0.7rem; background: rgba(56, 189, 248, 0.15); color: var(--primary-glow); border: 1px solid rgba(56, 189, 248, 0.4); padding: 3px 10px; border-radius: 12px; font-weight: 700; }
+        .member-role-title { font-size: 0.82rem; color: #38bdf8; font-weight: 700; margin-bottom: 8px; }
+
+        .skills-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        .skill-tag {
+            font-size: 0.68rem;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .grid-layout-8 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .service-img-box {
+            width: 100%;
+            height: 150px;
+            background: #091328;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .service-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .holo-card:hover .service-img-box img { transform: scale(1.08); }
+
+        .service-content { padding: 18px; }
+        .service-title { font-size: 1rem; font-weight: 800; color: #ffffff; margin-bottom: 6px; }
+        .service-text { font-size: 0.8rem; color: #94a3b8; margin-bottom: 12px; }
+        .tag-status { display: inline-block; font-size: 0.7rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
+        .tag-active { background: rgba(74, 222, 128, 0.15); color: var(--accent-green); border: 1px solid rgba(74, 222, 128, 0.4); }
+        .tag-secure { background: rgba(56, 189, 248, 0.15); color: var(--primary-glow); border: 1px solid rgba(56, 189, 248, 0.4); }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 6, 23, 0.9);
+            backdrop-filter: blur(18px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
+            border: 2px solid var(--primary-glow);
+            box-shadow: 0 0 50px rgba(56, 189, 248, 0.7), inset 0 0 30px rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 620px;
+            padding: 30px;
+            position: relative;
+            transform: scale(0.7);
+            overflow: hidden;
+        }
+
+        .modal-overlay.active .modal-box {
+            animation: hologramProject 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .modal-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(56, 189, 248, 0.04) 50%, rgba(0, 0, 0, 0.2) 50%);
+            background-size: 100% 4px;
+            pointer-events: none;
+        }
+
+        .modal-header-tag {
+            font-size: 0.72rem;
+            color: var(--primary-glow);
+            letter-spacing: 2.5px;
+            font-weight: 900;
+            text-shadow: 0 0 8px rgba(56, 189, 248, 0.8);
+            margin-bottom: 6px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px; right: 20px;
+            color: #94a3b8;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            z-index: 10;
+        }
+
+        .modal-close:hover { color: var(--primary-glow); }
+        
+        .modal-title { 
+            font-size: 1.5rem; 
+            font-weight: 900; 
+            color: #ffffff; 
+            margin-bottom: 14px; 
+            text-shadow: 0 0 12px rgba(56, 189, 248, 0.8); 
+            border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+            padding-bottom: 8px;
+        }
+
+        .modal-body { font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; white-space: pre-line; }
+        
+        .modal-spec-box {
+            margin-top: 18px;
+            padding: 14px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--primary-glow);
+            border-radius: 8px;
+            font-size: 0.82rem;
+            color: #7dd3fc;
+            font-family: monospace;
+            box-shadow: inset 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+
+        footer {
+            border-top: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 25px; text-align: center;
+            font-size: 0.8rem; color: #64748b; margin-top: 50px;
+        }
+        footer span { color: var(--primary-glow); font-weight: 800; }
+    </style>
+</head>
+<body>
+
+    <header>
+<!-- Header Navbar dengan Link ke Web Utama -->
+    <header>
+        <div class="brand-logo">CV <span>KELOMPOK 08</span></div>
+        <div class="nav-right-container">
+            <a href="#monitor" class="nav-item active" id="nav-monitor">System Monitor</a>
+            <a href="#anggota" class="nav-item" id="nav-anggota">Profil Anggota</a>
+            <a href="#layanan" class="nav-item" id="nav-layanan">Layanan (8)</a>
+            <a href="#keamanan" class="nav-item" id="nav-keamanan">Keamanan (4)</a>
+            <!-- Link diperbarui ke web utama tanpa target="_blank" -->
+            <a href="http://kel0mpok08.tkjbn.sch.id/" class="btn-portal-back">&larr; KEMBALI KE PORTAL UTAMA</a>
+        </div>
+    </header>        </div>
+    </header>
+
+    <div class="hero-banner">
+        <span class="badge-hologram">SUBDOMAIN: CV.KLMPK8</span>
+        <h1>SYSTEM MONITOR & PORTOFOLIO</h1>
+        <p>Portal monitoring real-time, spesifikasi server, serta portofolio anggota Kelompok 08 TJKT SMK Bela Nusantara Cianjur.</p>
+    </div>
+
+    <!-- 1. SYSTEM MONITOR -->
+    <section id="monitor">
+        <div class="section-header">
+            <h2>Realtime System Monitor</h2>
+            <p>Klik indikator untuk menampilkan proyeksi hologram full info</p>
+        </div>
+        <div class="monitor-grid">
+            <div class="holo-card monitor-card" onclick="openHoloModal('STATUS RILIS WEB', 'Web Version v2.6 STABLE', 'Sistem beroperasi pada versi stabil 2.6 dengan penambalan celah keamanan otomatis, optimasi cache Apache2, dan kompatibilitas SSL/TLS modern.', 'System Integrity: 100% | Uptime: 99.9%')">
+                <div class="monitor-val">v2.6 STABLE</div>
+                <div class="monitor-lbl">Status Rilis Web</div>
+            </div>
+            <div class="holo-card monitor-card" onclick="openHoloModal('MONITORING SUHU CPU', 'Server Thermal Condition: 37°C', 'Suhu prosesor server terpantau sangat dingin dan stabil pada rentang 37°C. Sirkulasi udara dan pendinginan hardware beroperasi dengan performa maksimal.', 'Thermal Sensor: Operational | Core Temp: Normal')">
+                <div class="monitor-val">37°C</div>
+                <div class="monitor-lbl">Suhu CPU Server</div>
+            </div>
+            <div class="holo-card monitor-card" onclick="openHoloModal('LATENSI NETWORK', 'Ping Latency: 2 ms', 'Waktu respon data antar antarmuka jaringan sangat responsif dengan delay 2 milidetik, menjamin akses HTTP tanpa lag.', 'Routing Latency: 2ms | Packet Loss: 0%')">
+                <div class="monitor-val">2 ms</div>
+                <div class="monitor-lbl">Ping Latency</div>
+            </div>
+            <div class="holo-card monitor-card" onclick="openHoloModal('KONSUMSI MEMORI', 'RAM Usage: 25% Used', 'Alokasi memori acak terpakai sebesar 25% dari total kapasitas. Tersisa ruang memori yang sangat cukup untuk menangani lonjakan trafik pengunjung.', 'RAM Status: Efficient | Swap: 0% Used')">
+                <div class="monitor-val">25% Used</div>
+                <div class="monitor-lbl">Penggunaan RAM</div>
+            </div>
+            <div class="holo-card monitor-card" onclick="openHoloModal('KAPASITAS PENYIMPANAN', 'Disk Storage Available: 90%', 'Ruang penyimpanan harddisk/SSD tersisa 90%. Bebas dari tumpukan file sampah atau log eror yang berlebihan.', 'Partition: /var/www/html | Health: Good')">
+                <div class="monitor-val">90% Free</div>
+                <div class="monitor-lbl">Disk Space Available</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PROFIL ANGGOTA -->
+    <section id="anggota">
+        <div class="section-header">
+            <h2>Profil Anggota Kelompok 8</h2>
+            <p>Klik profil anggota untuk menampilkan CV Hologram lengkap</p>
+        </div>
+        <div class="member-grid">
+            <div class="holo-card member-card" onclick="openHoloModal('PROYEKSI CV HOLOGRAM', 'Resky — Ketua Kelompok 8', 'Kualifikasi Teknik:\n• Memiliki spesialisasi utama dalam merancang Network Architecture.\n• Manajemen Linux Server (Apache2, DNS BIND9, SSH).\n• Eksekusi routing & switching jaringan enterprise.\n\nTugas Proyek:\nBertanggung jawab memimpin alur proyek, konfigurasi Web Server utama, dan manajemen alokasi tugas anggota.', 'Jabatan: Ketua Tim | Status: System Architect | Skills: Linux, Routing, Security')">
+                <div class="member-img-box">
+                    <img src="WhatsApp Image 2026-08-26 at 09.51.54.jpeg" alt="Resky">
+                </div>
+                <div class="member-details">
+                    <div class="member-title-bar">
+                        <div class="member-name">Resky</div>
+                        <span class="member-badge">Ketua Kelompok</span>
+                    </div>
+                    <div class="member-role-title">Network Architecture & Server Management</div>
+                    <div class="skills-tag-list">
+                        <span class="skill-tag">Linux Apache2</span>
+                        <span class="skill-tag">MikroTik Router</span>
+                        <span class="skill-tag">DNS Config</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="holo-card member-card" onclick="openHoloModal('PROYEKSI CV HOLOGRAM', 'Chelsea — Anggota Tim', 'Kualifikasi Teknik:\n• Berfokus pada pengujian performa UI/UX Web Interface (Web Testing).\n• Validasi dan audit keamanan subdomain.\n• Pengkonfigurasian segmentasi VLAN jaringan.\n\nTugas Proyek:\nMelakukan audit antarmuka web, pengujian respon HTTP, serta memastikan segmentasi jaringan VLAN berjalan tanpa konflik IP.', 'Jabatan: Anggota Tim | Status: Web QA Specialist | Skills: VLAN Trunking, Web Testing')">
+                <div class="member-img-box">
+                    <img src="WhatsApp Image 2026-08-26 at 10.45.05.jpeg" alt="Chelsea">
+                </div>
+                <div class="member-details">
+                    <div class="member-title-bar">
+                        <div class="member-name">Chelsea</div>
+                        <span class="member-badge">Anggota Tim</span>
+                    </div>
+                    <div class="member-role-title">VLAN Configuration & Web Testing</div>
+                    <div class="skills-tag-list">
+                        <span class="skill-tag">VLAN Trunking</span>
+                        <span class="skill-tag">Web Testing</span>
+                        <span class="skill-tag">Subdomain Audit</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="holo-card member-card" onclick="openHoloModal('PROYEKSI CV HOLOGRAM', 'Winda — Anggota Tim', 'Kualifikasi Teknik:\n• Administrasi hak akses berkas sistem (Permissions 755/644).\n• Penyambungan kabel Fiber Optic (Splicing).\n• Pengelolaan transfer berkas via FTP FileZilla.\n\nTugas Proyek:\nMengatur tingkat proteksi direktori web server agar aman dari eksploitasi berkas serta penyambungan fisik media transmisi FO.', 'Jabatan: Anggota Tim | Status: Infrastructure Engineer | Skills: FO Splicing, Permissions')">
+                <div class="member-img-box">
+                    <img src="WhatsApp Image 2026-08-26 at 09.24.29.jpeg" alt="Winda">
+                </div>
+                <div class="member-details">
+                    <div class="member-title-bar">
+                        <div class="member-name">Winda</div>
+                        <span class="member-badge">Anggota Tim</span>
+                    </div>
+                    <div class="member-role-title">Fiber Optic Splicing & Permissions</div>
+                    <div class="skills-tag-list">
+                        <span class="skill-tag">FO Splicer</span>
+                        <span class="skill-tag">chmod & chown</span>
+                        <span class="skill-tag">FileZilla FTP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MODUL INFRASTRUKTUR & LAYANAN (8 Info + Foto Online) -->
+    <section id="layanan">
+        <div class="section-header">
+            <h2>Modul Infrastruktur & Layanan (8 Info)</h2>
+            <p>Klik modul mana saja untuk melihat rincian spesifikasi hologram</p>
+        </div>
+        <div class="grid-layout-8">
+            <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 01', 'Apache2 HTTP Web Server', 'Layanan pelayan web utama yang menangani permintaan HTTP/HTTPS pada subdomain cv-klmpk8. Dilengkapi modul mod_rewrite untuk jalur URL bersih.', 'Port: 80 / 443 | Status: Active (Running)')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" alt="Apache2 Server">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">Apache2 Server</div>
+                    <div class="service-text">Melayani trafik HTTP subdomain cv-klmpk8.</div>
+                    <span class="tag-status tag-active">● RUNNING / ONLINE</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 02', 'Firewall & File Permissions', 'Sistem keamanan tingkat lanjut yang memblokir port tak terotorisasi (misal Telnet port 23) serta mengunci izin berkas pada 755 (Direktori) dan 644 (File).', 'Rule: Drop Port 23 | Perms: 755/644 Secured')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Firewall & Permissions">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">Firewall & Permissions</div>
+                    <div class="service-text">Proteksi port 23/22 dan izin 644 terjaga ketat.</div>
+                    <span class="tag-status tag-secure">✓ PROTECTED (755/644)</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 03', 'Gigabit Network Link', 'Koneksi antarmuka ethernet berkecepatan tinggi hingga 1Gbps untuk pertukaran paket data cepat tanpa hambatan latency.', 'Speed: 1000 Mbps | Latency: 2 ms Stable')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Gigabit Network">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">Gigabit Network</div>
+                    <div class="service-text">Transmisi jaringan ultra cepat dengan latensi 2ms.</div>
+                    <span class="tag-status tag-active">● OPTIMAL (1000Mbps)</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 04', 'FileZilla FTP Server', 'Protokol transfer berkas terenkripsi yang memungkinkan pembaruan kode HTML dan aset multimedia secara remote via user terverifikasi.', 'Auth User: Group 08 | Encryption: TLS/SSL FTP')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=600&q=80" alt="FileZilla FTP">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">FileZilla FTP</div>
+                    <div class="service-text">Pengunggahan berkas via akun terotorisasi.</div>
+                    <span class="tag-status tag-secure">✓ READY / AUTHORIZED</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 05', 'BIND9 DNS Resolver', 'Sistem pemetaan nama domain yang mengaitkan IP server ke domain kel0mpok08.tkjbn.sch.id serta subdomain cv-klmpk8.', 'DNS Port: 53 | Zone Status: Forward & Reverse OK')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="BIND9 DNS Resolver">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">BIND9 DNS Resolver</div>
+                    <div class="service-text">Resolusi domain utama dan subdomain instan.</div>
+                    <span class="tag-status tag-secure">✓ RESOLVED OK</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 06', 'OpenSSH Remote Service', 'Layanan manajemen terminal jarak jauh melalui baris perintah CLI terenkripsi untuk pemeliharaan sistem server berkala.', 'Port SSH: 22 | Encryption: ED25519/RSA-4096')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=600&q=80" alt="OpenSSH Remote">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">OpenSSH Remote</div>
+                    <div class="service-text">Akses manajemen server via terminal terenkripsi.</div>
+                    <span class="tag-status tag-active">● ACTIVE PORT 22</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 07', 'MariaDB Database Engine', 'Basis data relational berperforma tinggi untuk menyimpan log aktivitas pengunjung, akun admin, serta riwayat lalu lintas data.', 'DB Engine: InnoDB | Status: Standby Ready')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=600&q=80" alt="MariaDB Database">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">MariaDB Database</div>
+                    <div class="service-text">Mesin penyimpanan data yang terintegrasi.</div>
+                    <span class="tag-status tag-active">● STANDBY READY</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('INFORMASI HOLOGRAM MODUL 08', 'Automated Backup Module', 'Sistem pencadangan otomatis harian yang mengarsip berkas HTML, gambar, dan konfigurasi server ke direktori aman.', 'Schedule: Daily 00:00 | Compression: .tar.gz')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1600267175161-cfaa711b4a81?auto=format&fit=crop&w=600&q=80" alt="Automated Backup">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">Automated Backup</div>
+                    <div class="service-text">Pencadangan otomatis data web setiap malam.</div>
+                    <span class="tag-status tag-secure">✓ CRON ACTIVE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. SECURITY & NETWORK ANALYTICS (4 Info + Foto Online) -->
+    <section id="keamanan">
+        <div class="section-header">
+            <h2>Security & Network Analytics (4 Info)</h2>
+            <p>Klik kartu analitis untuk statistik detail hologram</p>
+        </div>
+        <div class="grid-layout-8">
+            <div class="holo-card" onclick="openHoloModal('ANALITIS KEAMANAN 01', 'Intrusion Detection System', 'Sistem pencegahan pencurian akses secara otomatis memblokir IP asing yang gagal melakukan login SSH lebih dari 3 kali.', 'Blocked IPs: 2 Active | Action: Auto Drop Packets')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=80" alt="Intrusion Detection">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">Intrusion Detection</div>
+                    <div class="service-text">Log blokir IP asing yang mencoba masuk via SSH.</div>
+                    <span class="tag-status tag-secure">🛡 2 IP BLOCKED</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('ANALITIS KEAMANAN 02', 'Apache Error Rate Monitor', 'Pemantauan persentase kegagalan respons HTTP 404/500 yang terpantau sangat minim (<1%), menandakan sistem stabil.', 'Error Rate: 0.02% | HTTP Status 200: 99.98%')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Apache Error Rate">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">Apache Error Rate</div>
+                    <div class="service-text">Tingkat kesalahan pemuatan halaman sangat rendah (<1%).</div>
+                    <span class="tag-status tag-active">● EXCELLENT (<1% ERR)</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('ANALITIS KEAMANAN 03', 'Koneksi HTTP / SSL Filter', 'Protokol transfer data dienkripsi dengan SSL/TLS standar industri untuk mencegah aksi Man-In-The-Middle (MITM).', 'SSL Certificate: Active | Cipher: TLS_AES_256_GCM')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=600&q=80" alt="Koneksi HTTP / SSL">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">Koneksi HTTP / SSL</div>
+                    <div class="service-text">Protokol transfer data saat ini menggunakan standard SSL.</div>
+                    <span class="tag-status tag-active">● PENDING SSL</span>
+                </div>
+            </div>
+
+            <div class="holo-card" onclick="openHoloModal('ANALITIS KEAMANAN 04', 'DNS Query Logs', 'Pencatatan statistik permintaan translasi nama domain ke IP address guna mendeteksi aktivitas DNS Poisoning.', 'Total Queries: 1,420 | Resolution Time: <1ms')">
+                <div class="service-img-box">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="DNS Query Logs">
+                </div>
+                <div class="service-content">
+                    <div class="service-title">DNS Query Logs</div>
+                    <div class="service-text">Log penerjemahan translasi nama domain ke IP server.</div>
+                    <span class="tag-status tag-secure">✓ FAST RESOLVE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 CV Subdomain Kelompok 8 - TJKT SMK Bela Nusantara Cianjur [<span>SYSTEM ONLINE & MONITORING ACTIVE</span>]
+    </footer>
+
+    <div class="modal-overlay" id="holoModal">
+        <div class="modal-box">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-header-tag" id="mTag">// HOLOGRAM SYSTEM PROJECTION</div>
+            <div class="modal-title" id="mTitle">TITLE HOLOGRAM</div>
+            <div class="modal-body" id="mBody">Content text goes here...</div>
+            <div class="modal-spec-box" id="mSpec">[DATA PARAMETER] Status: OK</div>
+        </div>
+    </div>
+
+    <script>
+        function openHoloModal(tag, title, content, spec) {
+            document.getElementById('mTag').innerText = "// " + tag;
+            document.getElementById('mTitle').innerText = title;
+            document.getElementById('mBody').innerText = content;
+            document.getElementById('mSpec').innerText = "[SYSTEM PARAMETER] " + spec;
+            document.getElementById('holoModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('holoModal').classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('holoModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        const sections = document.querySelectorAll("section");
+        const navItems = document.querySelectorAll(".nav-item");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navItems.forEach((item) => {
+                item.classList.remove("active");
+                if (item.getAttribute("href") === "#" + current) {
+                    item.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
