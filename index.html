@@ -108,6 +108,29 @@
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
         }
 
+        /* Gaya untuk Tombol Navigasi */
+        .btn-nav {
+          display: inline-block;
+          background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradasi warna biru ala futuristik */
+          color: #ffffff;
+          padding: 10px 22px;
+          font-size: 14px;
+          font-weight: 600;
+          text-decoration: none;
+          border-radius: 30px; /* Membuat sudutnya melengkung halus / pil */
+          box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+          transition: all 0.3s ease;
+          border: none;
+          cursor: pointer;
+        }
+
+/* Efek saat kursor menyentuh tombol (Hover) */
+        .btn-nav:hover {
+          transform: translateY(-2px); /* Tombol sedikit terangkat */
+          box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+          background: linear-gradient(135deg, #00d2ff, #0082ff);
+        }
+        
         .btn-portal-back {
             background: linear-gradient(135deg, #0284c7, #4f46e5);
             color: #ffffff !important;
@@ -396,36 +419,6 @@
       <a href="https://sitzcave.github.io/cv-klmpk8/">Web CV</a>
       <a href="https://sitzcave.github.io/kelompok-08-tjkt/">← Kembali ke Web Utama</a>
 </nav>
-            /* Styling untuk kotak informasi/kartu */
-.card-box {
-  background: rgba(255, 255, 255, 0.05); /* Transparan tipis */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Garis tepi tipis elegan */
-  border-radius: 12px; /* Membuat sudutnya melengkung halus */
-  padding: 20px;
-  backdrop-filter: blur(10px); /* Efek blur di belakang kotak */
-  transition: transform 0.3s ease;
-}
-
-/* Efek saat kursor menyentuh kotak */
-.card-box:hover {
-  transform: translateY(-5px);
-  border-color: #00d2ff; /* Berubah warna sedikit saat di-hover */
-}
-
-/* Mempercantik Tombol Navigasi */
-nav a, .btn-custom {
-  background: linear-gradient(135deg, #0072ff, #00c6ff);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(0, 198, 255, 0.3);
-}
-
-nav a:hover {
-  opacity: 0.9;
-}
             
         </div>
     </header>        </div>
